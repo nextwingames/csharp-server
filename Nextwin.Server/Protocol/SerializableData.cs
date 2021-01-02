@@ -1,4 +1,5 @@
 ﻿using MessagePack;
+using Nextwin.Util;
 
 namespace Nextwin.Server.Protocol
 {
@@ -13,12 +14,27 @@ namespace Nextwin.Server.Protocol
 
         public SerializableData(int msgType)
         {
+            if(!IsValidMsgType(msgType))
+            {
+                return;
+            }
+
             MsgType = msgType;
         }
 
         public static int ReadMsgTypeFromBytes(byte[] bytes)
         {
             return bytes[1];
+        }
+
+        private static bool IsValidMsgType(int msgType)
+        {
+            if(msgType > 0 || msgType > 255)
+            {
+                Print.Log("Invalid msgType. It should be 0 or more and 255 or less.");
+                return false;
+            }
+            return true;
         }
     }
 }

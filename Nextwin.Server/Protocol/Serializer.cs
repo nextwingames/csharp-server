@@ -22,7 +22,7 @@ namespace Nextwin.Server.Protocol
             return MessagePackSerializer.Deserialize<T>(bytes);
         }
 
-        public byte[] Serialize(SerializableData data)
+        public byte[] Serialize<T>(T data)
         {
             return MessagePackSerializer.Serialize(data);
         }
