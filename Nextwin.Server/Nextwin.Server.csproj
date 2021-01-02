@@ -4,4 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MessagePack" Version="2.2.85" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Nextwin">
+      <HintPath>lib\Nextwin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
