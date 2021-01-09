@@ -1,5 +1,4 @@
 ﻿using Nextwin.Net;
-using Nextwin.Protocol;
 using Nextwin.Server.Protocol;
 using System;
 using System.Net.Sockets;
